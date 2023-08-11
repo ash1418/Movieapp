@@ -73,6 +73,7 @@ body{
    position: absolute;
    bottom: 0;
     display:flex;
+
      width:100%; 
     box-sizing: border-box;
     padding: 10px 20px;
@@ -84,6 +85,22 @@ body{
   flex:1;
   
 }
+.footer .stars{
+    width: 20px;
+    height: 20px;
+  }
+ .footer .stars-comp {
+    font-size: 20px;
+    font-weight: 600;
+    flex:1; 
+    position: relative;
+  } 
+
+.footer .star-btn{
+    height:7px;
+    width:7px;
+}
+
 
 .footer button {
     font-size:15px;
