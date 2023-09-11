@@ -1,0 +1,32 @@
+export const movies= [{
+    id:1,
+    title:"Oppenheimer",
+    plot: "During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project.",
+    prize: 1999,
+    poster:"https://static.hd-trailers.net/images/-159759-poster-xlarge.jpg",   
+    rating:9.1,
+    stars:0,
+    fav: false,
+    inCart:false,
+},
+
+{ id:2,
+ title:"Oppenheimer",
+plot: "During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project.",
+prize: 1999,
+poster:"https://static.hd-trailers.net/images/-159759-poster-xlarge.jpg",   
+rating:9.1,
+stars:0,
+fav: false,
+inCart:false,},
+
+{ id:3,
+title:"Oppenheimer",
+plot: "During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project.",
+prize: 1999,
+poster:"https://static.hd-trailers.net/images/-159759-poster-xlarge.jpg",   
+rating:9.1,
+stars:0,
+fav: false,
+inCart:false,}
+]

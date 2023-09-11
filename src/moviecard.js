@@ -1,51 +1,58 @@
-import React from "react";
-
-class MovieCard extends React.Component{
-    constructor(){
-        super();
-        this.state ={
-            title:"Oppenheimer",
-            plot: "During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project.",
-            prize: 1999,
-            rating:9.1,
-        }
-    }
-    render(){
-        const {title,plot,prize,rating}=this.state;
+function MovieCard(props) {
+   
+    
+    
         
+        const{movie,addStars,decStars,toggleFav,toggleCart}=props;
+        const {title,plot,prize,poster,rating,stars,fav,inCart}=props.movie;
+
         return (
 
             <div className="main">
              <div className="movie-card">
                 <div className="left">
-                    <img src="https://static.hd-trailers.net/images/-159759-poster-xlarge.jpg" alt="Poster"/>
+                    <img src={poster} alt="Poster"/>
                 </div>
                 <div className="right">
                    <div className="title"> {title} </div>
                    <div className="plot"> {plot} </div>
-                   <div className="prize"> {prize} only </div>  
+                   <div className="prize"> Rs.{prize}/only </div>  
                    <div className="footer">
                     <div className="rating">{rating}</div>
                     <div className="stars-comp">
                       
                       <img className="star-btn" alt="decrease"
-                      src="https://cdn-icons-png.flaticon.com/128/56/56889.png"/>
+                      src="https://cdn-icons-png.flaticon.com/128/56/56889.png"
+                      onClick={() =>
+                      {decStars(movie)}
+                      }/>
                       
                       <img
                       src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" 
                       alt ="star" className="stars"/>
                      <img className="star-btn" alt="increase"
-                      src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"/>  
+                      src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"
+                      onClick={()=>{
+                        addStars(movie)
+                      }} />  
 
-                     <span>0</span>      
+                     <span>{stars}</span>      
                     </div>
-                    <button className="favourite-btn"> Favourite </button>
-                    <button className="cart-btn">Add to cart</button>
+
+                    {/* {fav? <button onClick= {this.handleFav} className="unfavourite-btn">Un-favourite</button>:<button onClick= {this.handleFav} className="favourite-btn"> Favourite </button>} */}
+                    
+                    <button onClick= {()=>{
+                       toggleFav(movie) }} className={fav?"unfavourite-btn":"favourite-btn"}>{fav?"Un-favourite":"Favourite"}</button>
+
+                    <button onClick={() =>
+                    {
+                        toggleCart(movie)
+                    }} className={inCart?"r-cart-btn":"cart-btn"}>{inCart?"Remove":"Add to cart"}</button>
                    </div>                 
                 </div>
              </div>    
              </div>
         )
-    }
+    
 }
 export default MovieCard;
